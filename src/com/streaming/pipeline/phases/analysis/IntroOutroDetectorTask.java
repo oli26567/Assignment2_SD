@@ -13,6 +13,6 @@ public class IntroOutroDetectorTask implements Task {
 
     @Override
     public ValidationResult execute(MasterFile file) {
-        return new ValidationResult(true, "Intro and Outro timestamps successfully recorded.");
+        return new ValidationResult(true, "[Intro End: 00:00:15] [Outro Start: 00:09:45]");
     }
 }

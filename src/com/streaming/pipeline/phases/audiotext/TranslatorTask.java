@@ -20,6 +20,6 @@ public class TranslatorTask implements Task {
         } catch (Exception e) {
         }
         
-        return new ValidationResult(true, "Transcript translated to target languages successfully.");
+        return new ValidationResult(true, "[Target: RO] [Output: ro_translation.txt]");
     }
 }

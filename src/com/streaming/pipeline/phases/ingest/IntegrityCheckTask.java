@@ -2,7 +2,6 @@ package com.streaming.pipeline.phases.ingest;
 
 import com.streaming.pipeline.core.Task;
 import com.streaming.pipeline.core.ValidationResult;
-import com.streaming.pipeline.core.ValidationResult;
 import com.streaming.pipeline.models.MasterFile;
 
 import java.io.InputStream;
@@ -34,10 +33,9 @@ public class IntegrityCheckTask implements Task {
                 if(hex.length() == 1) hexString.append('0');
                 hexString.append(hex);
             }
+            return new ValidationResult(true, "[Hash: " + hexString.toString().substring(0, 8) + "]");
         } catch (Exception e) {
             return new ValidationResult(false, "Native Checksum calculation failed: " + e.getMessage());
         }
-
-        return new ValidationResult(true, "Checksum verified and file headers check out.");
     }
 }

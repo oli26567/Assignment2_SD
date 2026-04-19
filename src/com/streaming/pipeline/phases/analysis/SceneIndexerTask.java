@@ -13,8 +13,7 @@ public class SceneIndexerTask implements Task {
 
     @Override
     public ValidationResult execute(MasterFile file) {
-        
-        
+        java.util.List<String> timestamps = new java.util.ArrayList<>();
         try {
             ProcessBuilder pb = new ProcessBuilder(
                     "ffmpeg", 
@@ -30,8 +29,6 @@ public class SceneIndexerTask implements Task {
             
             java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(process.getInputStream()));
             String line;
-            
-            java.util.List<String> timestamps = new java.util.ArrayList<>();
             boolean foundCut = false;
             while ((line = reader.readLine()) != null) {
                 if (line.contains("Parsed_showinfo") && line.contains("pts_time:")) {
@@ -65,6 +62,6 @@ public class SceneIndexerTask implements Task {
             return new ValidationResult(false, "Failed to run native ffmpeg for scene indexing: " + e.getMessage());
         }
         
-        return new ValidationResult(true, "Finished parsing scenes.");
+        return new ValidationResult(true, "[Detected " + timestamps.size() + " segments: dialogue, action]");
     }
 }

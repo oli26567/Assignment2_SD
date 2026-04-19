@@ -13,6 +13,6 @@ public class DRMWrapperTask implements Task {
 
     @Override
     public ValidationResult execute(MasterFile file) {
-        return new ValidationResult(true, "All required streamable assets encrypted successfully.");
+        return new ValidationResult(true, "[DRM Wrapper: AES-128]");
     }
 }

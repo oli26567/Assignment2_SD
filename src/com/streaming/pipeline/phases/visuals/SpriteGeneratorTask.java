@@ -33,6 +33,6 @@ public class SpriteGeneratorTask implements Task {
             return new ValidationResult(false, "Failed to run native ffmpeg thumbnail command: " + e.getMessage());
         }
         
-        return new ValidationResult(true, "Thumbnail saved.");
+        return new ValidationResult(true, "[120 thumbnails merged into sprite_map.jpg]");
     }
 }

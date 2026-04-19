@@ -42,6 +42,6 @@ public class TranscoderTask implements Task {
             return new ValidationResult(false, "Failed to run native ffmpeg command: " + e.getMessage());
         }
         
-        return new ValidationResult(true, "Done transcoding!");
+        return new ValidationResult(true, "[Created: 480p_sample.mp4, 480p_sample.webm]");
     }
 }

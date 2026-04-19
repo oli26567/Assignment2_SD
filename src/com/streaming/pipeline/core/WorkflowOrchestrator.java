@@ -82,17 +82,18 @@ public class WorkflowOrchestrator {
     }
 
     private boolean runPhase(String phaseName, List<Task> tasks, MasterFile file) {
+        System.out.println("[" + phaseName + "]");
         for (Task task : tasks) {
-            System.out.print("[" + phaseName + "] " + getActionName(task) + "... ");
+            System.out.print(getActionName(task) + "... ");
             ValidationResult result = task.execute(file);
             if (!result.isSuccess()) {
                 System.out.println("FAILED (" + result.getMessage() + ")");
                 return false;
             } else {
                 if (task.getName().equals("Transcoder")) {
-                    System.out.println("DONE");
+                    System.out.println(result.getMessage() + " DONE");
                 } else {
-                    System.out.println("OK");
+                    System.out.println(result.getMessage() + " OK");
                 }
             }
         }

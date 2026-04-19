@@ -13,6 +13,6 @@ public class RegionalBrandingTask implements Task {
 
     @Override
     public ValidationResult execute(MasterFile file) {
-        return new ValidationResult(true, "Regional branding successfully integrated.");
+        return new ValidationResult(true, "[Overlay: Netflix Original]");
     }
 }

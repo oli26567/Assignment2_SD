@@ -25,24 +25,20 @@ public class SceneComplexityTask implements Task {
             Process process = pb.start();
             
             java.io.BufferedReader reader = new java.io.BufferedReader(new java.io.InputStreamReader(process.getInputStream()));
-            String line;
-            int count = 0;
-            String[] labels = {"Duration (sec): ", "Size (bytes): ", "Bitrate (bps): "};
-            while ((line = reader.readLine()) != null) {
-                if (count < labels.length) {
-                } else {
-                }
-                count++;
-            }
+            String dur = reader.readLine();
+            String size = reader.readLine();
+            String rate = reader.readLine();
             
             int exitCode = process.waitFor();
             if (exitCode != 0) {
                  return new ValidationResult(false, "ffprobe process failed with exit code: " + exitCode);
             }
+            
+            long bytes = Long.parseLong(size);
+            String durTrunc = dur.substring(0, Math.min(4, dur.length()));
+            return new ValidationResult(true, "[FFprobe: " + (bytes/1024/1024) + "MB file, " + durTrunc + "sec duration]");
         } catch (Exception e) {
             return new ValidationResult(false, "Failed to run native ffprobe command: " + e.getMessage());
         }
-        
-        return new ValidationResult(true, "Dynamic encoding profile generated successfully using FFprobe.");
     }
 }

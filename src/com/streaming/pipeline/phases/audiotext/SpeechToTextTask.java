@@ -35,6 +35,6 @@ public class SpeechToTextTask implements Task {
             java.nio.file.Files.writeString(new java.io.File("movie_101/text/source_transcript.txt").toPath(), transcript);
         } catch (Exception e) {}
         
-        return new ValidationResult(true, "Audio processing finished.");
+        return new ValidationResult(true, "[Source: English Master]");
     }
 }

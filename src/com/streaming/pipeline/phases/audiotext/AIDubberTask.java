@@ -24,6 +24,6 @@ public class AIDubberTask implements Task {
         } catch (Exception e) {
         }
         
-        return new ValidationResult(true, "Localized dub tracks synthesized successfully.");
+        return new ValidationResult(true, "[Generating: ro_dub_synthetic.aac]");
     }
 }

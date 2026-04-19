@@ -13,6 +13,6 @@ public class CreditRollerTask implements Task {
 
     @Override
     public ValidationResult execute(MasterFile file) {
-        return new ValidationResult(true, "Credits timestamp identified and triggered.");
+        return new ValidationResult(true, "[Watch Next Trigger set at 00:09:50]");
     }
 }

@@ -39,6 +39,6 @@ public class FormatValidatorTask implements Task {
             return new ValidationResult(false, "Failed to run native ffprobe format extraction: " + e.getMessage());
         }
         
-        return new ValidationResult(true, "Format is valid studio specification.");
+        return new ValidationResult(true, "[Found: " + (file.getSizeInBytes()/(1024*1024)) + "MB " + file.getFormat().toUpperCase() + " Master]");
     }
 }
