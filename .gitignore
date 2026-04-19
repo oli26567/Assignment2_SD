@@ -10,12 +10,23 @@ out/
 # Log files
 *.log
 
-# Project specific large media files and scripts (DO NOT UPLOAD TO GITHUB)
-movie_101/
-*.mp4
-*.webm
-*.mkv
+# Project specific massive files (DO NOT UPLOAD)
 *.pdf
 pdf_text.txt
 silence_tasks.py
 movie_101.zip
+
+# Globally block all massive video files by default
+*.mp4
+*.webm
+*.mkv
+
+# EXPERT EXCEPTION: Allow the tiny output clips inside movie_101 folder!
+!movie_101/
+!movie_101/**/*.mp4
+!movie_101/**/*.webm
+!movie_101/**/*.mkv
+!movie_101/**/*.jpg
+!movie_101/**/*.json
+!movie_101/**/*.txt
+!movie_101/**/*.aac

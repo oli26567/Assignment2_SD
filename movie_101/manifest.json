@@ -1,0 +1,21 @@
+{
+  "manifest_assets": [
+    "movie_101/audio/master_extracted.aac",
+    "movie_101/audio/ro_dub_synthetic.aac",
+    "movie_101/images/sprite_map.jpg",
+    "movie_101/metadata/scene_analysis.json",
+    "movie_101/text/ro_translation.txt",
+    "movie_101/text/source_transcript.txt",
+    "movie_101/video/h264/1080p_h264.mp4",
+    "movie_101/video/h264/480p_sample.mp4",
+    "movie_101/video/h264/4k_h264.mp4",
+    "movie_101/video/h264/720p_h264.mp4",
+    "movie_101/video/hevc/1080p_hevc.mkv",
+    "movie_101/video/hevc/4k_hevc.mkv",
+    "movie_101/video/hevc/720p_hevc.mkv",
+    "movie_101/video/vp9/1080p_vp9.webm",
+    "movie_101/video/vp9/480p_sample.webm",
+    "movie_101/video/vp9/4k_vp9.webm",
+    "movie_101/video/vp9/720p_vp9.webm"
+  ]
+}
