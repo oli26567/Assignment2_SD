@@ -1,0 +1,21 @@
+# IntelliJ IDEA core files
+.idea/
+out/
+*.iml
+*.iws
+
+# Compiled java class files
+*.class
+
+# Log files
+*.log
+
+# Project specific large media files and scripts (DO NOT UPLOAD TO GITHUB)
+movie_101/
+*.mp4
+*.webm
+*.mkv
+*.pdf
+pdf_text.txt
+silence_tasks.py
+movie_101.zip
